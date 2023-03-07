@@ -8,6 +8,6 @@ var config = {}
 config.mongoURI = {
     production: process.env.MONGODB_URI_PROD,
     development: process.env.MONGODB_URI_DEV,
-    test: process.env.MONGODB_URI_TEST,
+    test: 'mongodb+srv://test:testCredentials@cluster0.sl8dl.mongodb.net/darkroom-test?retryWrites=true&w=majority',
 }
 module.exports = config;

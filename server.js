@@ -2,9 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const path = require('path');
-const dotenv = require("dotenv");
 
-dotenv.config();
 const config = require('./_config');
 
 // Define routes
@@ -13,7 +11,7 @@ let image = require('./routes/image');
 
 const app = express();
 
-
+console.log(config.mongoURI[app.settings.env] || "null");
 // connecting the database
 const MONGODB_URI = process.env.MONGODB_URI || config.mongoURI[app.settings.env]
 mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true  },(err)=>{
